@@ -66,3 +66,4 @@ app.get('/products/seedroute', (req, res) => {
     app.listen(PORT, () => {
         console.log(`The server is listening on port: ${PORT}`)
     })
+    
