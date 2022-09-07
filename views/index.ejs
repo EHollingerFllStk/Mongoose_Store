@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <h1>Mongoose Store page</h1>
+    <nav><a href="/products/new">Add New Products</nav>  
+    <ul>
+        <% products.forEach(product=> { %>
+            <li>
+                <a href="/products/<%=product._id %>"><%=product.name; %></a>
+            </li>
+            <li>
+                $<%=product.price%>
+            </li>
+            <img src=<%=product.img%>/>
+            <% }) %>
+
+    </ul>
+</body>
+
+</html>
