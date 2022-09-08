@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Fo Show</title>
-	</head>
-	<body>
 
-		<nav>
-			<a href="/products">Back to Store Index</a>
-		</nav>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+	<title>For Show</title>
+</head>
 
-		<h1>
-            <%=product.name %>
-        </h1>
-		Price: <%= product.price%>
+<body>
+
+	<nav>
+		<a href="/products">Back to Store Index</a>
+	</nav>
+
+	<h1>
+		<%=product.name %>
+	</h1>
+	Price: <%= product.price%>
 		<br />
-		Description: <%= product.description %> 
-        <br />
-        Quantity: <%= product.qty%>
-		<br />
-       <img src="<%=product.img%>">
-		<% if (product.qty > 0) { %>
-			<form action="/products/<%= product._id%>/buy?_method=PUT" method="POST" > <button>Buy</button>
-		</form>
-		<%}%>
+		Description: <%= product.description %>
+			<br />
+			Quantity: <%= product.qty%>
+				<br />
+				<img src="<%=product.img%>">
+				<% if (product.qty> 0) { %>
+					<form action="/products/<%= product._id%>/buy?_method=PUT" method="POST"> <button>Buy</button>
+					</form>
+					<%}%>
 
-       
-	</body>
+
+</body>
+
 </html>
