@@ -22,6 +22,11 @@
         Quantity: <%= product.qty%>
 		<br />
        <img src="<%=product.img%>">
-        <button>Buy</button>
+		<% if (product.qty > 0) { %>
+			<form action="/products/<%= product._id%>/buy?_method=PUT" method="POST" > <button>Buy</button>
+		</form>
+		<%}%>
+
+       
 	</body>
 </html>

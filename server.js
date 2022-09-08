@@ -62,15 +62,15 @@ app.delete("/products/:id", (req, res) => {
 })
 
 //UPDATE
-
-app.put("/products/:id", (req, res) => {
+app.put("/products/:id/buy", (req, res) => {
     Product.findByIdAndUpdate(
         req.params.id,
         req.body,
-        {
-            new: true,
-        },
+        {new: true},
         (error, updatedProduct) => {
+            updatedProduct.qty -= 1
+            console.log(updatedProduct)
+            updatedProduct.save()
             res.redirect(`/products/${req.params.id}`)
         }
     )
